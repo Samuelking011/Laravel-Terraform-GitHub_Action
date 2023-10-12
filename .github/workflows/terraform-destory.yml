@@ -29,7 +29,7 @@ jobs:
 
             - name: Get Plan Output
               id: plan-output
-              run: 
+              run: |
                 terraform init
                 terraform plan -destroy
               
