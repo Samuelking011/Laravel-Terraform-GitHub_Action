@@ -30,6 +30,6 @@ jobs:
             - name: terraform destroy
               uses: dflook/terraform-destroy@v1
               with:
-                path: CONFIG_DIRECTORY
+                path: Laravel-with-Terraform-Github_Action
                 workspace: ${{ env.TF_WORKSPACE }}
                 #path: ${{ steps.plan-upload.outputs.configuration_version_id }}
