@@ -27,16 +27,10 @@ jobs:
                 workspace: ${{ env.TF_WORKSPACE }}
                 directory: ${{ env.CONFIG_DIRECTORY }}
 
-            - name: Create Plan Run
-              uses: hashicorp/tfc-workflows-github/actions/create-run@v1.0.4
-              id: plan-run
-              with:
-                workspace: ${{ env.TF_WORKSPACE }}
-                configuration_version: ${{ steps.plan-upload.outputs.configuration_version_id }}
-
             - name: Get Plan Output
               id: plan-output
               run: 
+                terraform init
                 terraform plan -destroy
               
               
