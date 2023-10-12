@@ -42,9 +42,9 @@ jobs:
                 run: ${{ steps.apply-run.outputs.run_id }}
                 comment: "Apply Run from GitHub Actions CI ${{ github.sha }}"
                 
-            - name: Retry failed destroy
-              uses: dflook/terraform-destroy@v1
-              if: ${{ steps.first_try.outputs.failure-reason == 'destroy-failed' }}
-              with:
-                run: ${{ steps.apply-run.outputs.run_id }}
-                comment: "Apply Run from GitHub Actions CI ${{ github.sha }}"ersion_id }}
+           # - name: Retry failed destroy
+           #   uses: dflook/terraform-destroy@v1
+           #   if: ${{ steps.first_try.outputs.failure-reason == 'destroy-failed' }}
+           #   with:
+           #     run: ${{ steps.apply-run.outputs.run_id }}
+           #     comment: "Apply Run from GitHub Actions CI ${{ github.sha }}"ersion_id }}
