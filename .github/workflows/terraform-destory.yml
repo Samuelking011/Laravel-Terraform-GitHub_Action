@@ -27,18 +27,8 @@ jobs:
                 workspace: ${{ env.TF_WORKSPACE }}
                 directory: ${{ env.CONFIG_DIRECTORY }}
 
-            - name: Get Plan Output
-              id: plan-output
-              run: |
-                terraform init
-                terraform plan -destroy
-              
-              
-                
-            - name: terraform_destroy
-              if: fromJSON(steps.plan-output.outputs.payload).data.attributes.actions.IsConfirmable
-              id: destroy
-              run: |
-                terraform init
-                terraform plan -destroy -out=destroy.tfplan
-                terraform apply destroy.tfplan
+            - name: terraform destroy
+              uses: dflook/terraform-destroy@v1
+              with:
+                #path: my-terraform-config
+                workspace: ${{ env.TF_WORKSPACE }}
