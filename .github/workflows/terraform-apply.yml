@@ -1,7 +1,8 @@
 name: "Terraform Apply"
 
 on:
-  workflow_dispatch:
+  push:
+    main
 
 env:
   TF_CLOUD_ORGANIZATION: "Sammyvirtual-solution"
