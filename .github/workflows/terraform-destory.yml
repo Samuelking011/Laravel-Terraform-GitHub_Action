@@ -38,6 +38,5 @@ jobs:
               id: destroy
               run: |
                 terraform init
-                terraform plan
                 terraform plan -destroy -out=destroy.tfplan
                 terraform apply destroy.tfplan
