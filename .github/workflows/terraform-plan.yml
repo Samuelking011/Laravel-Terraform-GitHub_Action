@@ -1,7 +1,7 @@
 name: "Terraform Plan"
 
 on:
-  workflow_dispatch:
+  pull_request:
 
 env:
   TF_CLOUD_ORGANIZATION: "Sammyvirtual-solution"
